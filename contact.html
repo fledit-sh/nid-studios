@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — NID Studios</title>
+  <meta name="description" content="Send us a brief. Working out of Trondheim. Tell us what you need to build, defend, or rename — a paragraph is enough.">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://nid-studios.no/contact.html">
+  <meta property="og:title"       content="Contact — NID Studios">
+  <meta property="og:description" content="Send a brief. We'll read it the same day.">
+  <meta property="og:image"       content="https://nid-studios.no/assets/og-image.png">
+
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<nav class="nav" id="nav" aria-label="Main navigation">
+  <a class="brand" href="/">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="wm">NID Studios</span>
+  </a>
+  <ul class="nav-links" role="list">
+    <li><a href="/"              >Home</a></li>
+    <li><a href="/about.html"    >About</a></li>
+    <li><a href="/services.html" >Services</a></li>
+    <li><a href="/work.html"     >Work</a></li>
+    <li><a href="/contact.html"  aria-current="page">Contact</a></li>
+  </ul>
+  <div class="nav-cta" id="clock" aria-label="Current time in Trondheim"></div>
+</nav>
+
+<main>
+
+  <section class="section contact contact-section" aria-labelledby="contact-heading">
+    <div class="shell contact-inner">
+
+      <div>
+        <p class="label contact-label">05 — Get in touch</p>
+        <h2 id="contact-heading" class="reveal">
+          Send a brief.<br><em>We'll read it the same day.</em>
+        </h2>
+        <p class="contact-lede reveal" data-d="1">
+          Working out of Trondheim — and most often <em>in</em> Trondheim. Tell us what you're trying to build, defend, or rename. A paragraph is enough.
+        </p>
+
+        <form
+          class="form reveal"
+          data-d="2"
+          data-formspree
+          action="https://formspree.io/f/YOUR_FORM_ID"
+          method="POST"
+          novalidate
+        >
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="co">Company</label>
+            <input id="co" name="co" type="text" placeholder="Where you work" autocomplete="organization">
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@company.no" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="svc">Service</label>
+            <select id="svc" name="svc" autocomplete="off">
+              <option>Static site</option>
+              <option>Studio site</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="msg">Brief</label>
+            <textarea id="msg" name="msg" rows="3" placeholder="A few sentences on what you need." required></textarea>
+          </div>
+          <div class="form-foot">
+            <span class="note">PGP key on request · NDA available</span>
+            <button type="submit" class="btn">Send brief <span class="arr">→</span></button>
+          </div>
+          <span id="form-status" class="form-status" aria-live="polite" aria-atomic="true"></span>
+        </form>
+      </div>
+
+      <aside class="contact-side reveal" data-d="1" aria-label="Studio contact information">
+        <div class="contact-block">
+          <h4>Studio</h4>
+          <p>NID Studios AS</p>
+          <p class="small">Kjøpmannsgata 23<br>7013 Trondheim<br>Norway</p>
+        </div>
+        <div class="contact-block">
+          <h4>Direct</h4>
+          <a href="mailto:studio@nid-studios.no">studio@nid-studios.no</a>
+          <p class="small mt-sm">Mon — Fri / 08—16 CET</p>
+        </div>
+        <div class="contact-block">
+          <h4>For attackers</h4>
+          <a href="mailto:security@nid-studios.no">security@nid-studios.no</a>
+          <p class="small mt-sm">Coordinated disclosure welcomed.</p>
+        </div>
+        <div class="contact-block">
+          <h4>Tags</h4>
+          <div class="tags-strip tags-strip--sm">
+            <span class="tg">[CSP ✓]</span>
+            <span class="tg">[GDPR clean]</span>
+            <span class="tg meta">[N&nbsp;63.430 / E&nbsp;10.395]</span>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot" aria-label="Footer">
+  <div class="col">
+    <span class="h">NID Studios AS</span>
+    <span>Kjøpmannsgata 23</span>
+    <span>7013 Trondheim</span>
+    <span>Norway</span>
+  </div>
+  <div class="col">
+    <span class="h">Direct</span>
+    <a href="mailto:studio@nid-studios.no">studio@nid-studios.no</a>
+    <a href="mailto:security@nid-studios.no">security@nid-studios.no</a>
+    <a href="/contact.html" aria-current="page">Send a brief →</a>
+  </div>
+  <div class="col right">
+    <span class="h">v.01.04 / IV</span>
+    <span>© 2026 NID Studios</span>
+  </div>
+  <div class="tags-row">
+    <span class="tg">[CSP <span class="ck">✓</span>]</span>
+    <span class="tg">[Lighthouse 98]</span>
+    <span class="tg">[GDPR clean]</span>
+    <span class="tg meta">[Est. 2026]</span>
+    <span class="tg meta">[N&nbsp;63.430 / E&nbsp;10.395]</span>
+  </div>
+</footer>
+
+<script src="/main.js" defer></script>
+</body>
+</html>
