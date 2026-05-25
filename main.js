@@ -1,6 +1,6 @@
 /* NID Studios — main.js
-   Vanilla JS for: nav scroll, active nav, TrondheimClock,
-   WorkboardPapers, drawer accordion, IntersectionObserver reveals,
+   Vanilla JS for: nav scroll, TrondheimClock, WorkboardPapers,
+   PaperPlate manifesto, drawer accordion, IntersectionObserver reveals,
    WorkRoulette, and Formspree contact form. */
 
 (function () {
@@ -200,7 +200,38 @@
     setInterval(spawnNote, 3500);
   }
 
-  // ── 4. DRAWER ACCORDION ──────────────────────────────────
+  // ── 4. PAPER PLATE (manifesto video) ────────────────────
+  var paperPlateReveal = document.getElementById('paper-plate-reveal');
+  var paperPlateVideo  = document.querySelector('.paper-plate-video');
+  if (paperPlateVideo && paperPlateReveal) {
+    var FADE_IN_START  = 0.30;
+    var FADE_IN_END    = 0.34;
+    var FADE_OUT_START = 0.60;
+    var FADE_OUT_END   = 0.66;
+
+    var tryPlay = function () { paperPlateVideo.play().catch(function () {}); };
+    if (paperPlateVideo.readyState >= 2) tryPlay();
+    else paperPlateVideo.addEventListener('loadeddata', tryPlay, { once: true });
+
+    function paperTick() {
+      if (paperPlateVideo.duration) {
+        var p = paperPlateVideo.currentTime / paperPlateVideo.duration;
+        var op;
+        if      (p < FADE_IN_START)  op = 0;
+        else if (p < FADE_IN_END)    op = (p - FADE_IN_START)  / (FADE_IN_END  - FADE_IN_START);
+        else if (p < FADE_OUT_START) op = 1;
+        else if (p < FADE_OUT_END)   op = 1 - (p - FADE_OUT_START) / (FADE_OUT_END - FADE_OUT_START);
+        else                         op = 0;
+        op = 1 - Math.pow(1 - op, 2); // easeOut
+        paperPlateReveal.style.opacity   = op;
+        paperPlateReveal.style.transform = 'translateY(' + ((1 - op) * 8) + 'px)';
+      }
+      requestAnimationFrame(paperTick);
+    }
+    requestAnimationFrame(paperTick);
+  }
+
+  // ── 5. DRAWER ACCORDION ──────────────────────────────────
   var drawers = document.querySelectorAll('.drawer');
   drawers.forEach(function (drawer) {
     var btn = drawer.querySelector('.drawer-pull');
@@ -236,7 +267,7 @@
     });
   });
 
-  // ── 5. INTERSECTION OBSERVER REVEALS ─────────────────────
+  // ── 6. INTERSECTION OBSERVER REVEALS ─────────────────────
   var revealEls = document.querySelectorAll('.reveal');
   if (revealEls.length && 'IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
@@ -253,7 +284,7 @@
     revealEls.forEach(function (el) { el.classList.add('in-view'); });
   }
 
-  // ── 6. WORK ROULETTE (work page) ─────────────────────────
+  // ── 7. WORK ROULETTE (work page) ─────────────────────────
   var rouletteSection = document.querySelector('.work-roulette');
   if (rouletteSection) {
     var images     = rouletteSection.querySelectorAll('.roulette-image');
@@ -359,7 +390,7 @@
     startTimer();
   }
 
-  // ── 7. CONTACT FORM (Formspree) ──────────────────────────
+  // ── 8. CONTACT FORM (Formspree) ──────────────────────────
   var formEl   = document.querySelector('form[data-formspree]');
   var statusEl = document.getElementById('form-status');
   if (formEl && statusEl) {
