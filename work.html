@@ -4,135 +4,105 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Work — NID Studios</title>
-  <meta name="description" content="What we've shipped. A portfolio for artist Kim Søren Larsen — browse works, get in contact to buy.">
+  <meta name="description" content="What we've shipped from Trondheim. Gurman, a Croatian restaurant's menu site, and KSLART, a fine-art portfolio for Kim Søren Larsen.">
 
   <meta property="og:type"        content="website">
   <meta property="og:url"         content="https://nid-studios.no/work.html">
   <meta property="og:title"       content="Work — NID Studios">
-  <meta property="og:description" content="What we've shipped.">
+  <meta property="og:description" content="What we've shipped from Trondheim — Gurman and KSLART.">
   <meta property="og:image"       content="https://nid-studios.no/assets/og-image.png">
+  <meta name="twitter:card"       content="summary_large_image">
+  <meta name="twitter:title"      content="Work — NID Studios">
+  <meta name="twitter:description" content="What we've shipped from Trondheim — Gurman and KSLART.">
+  <meta name="twitter:image"      content="https://nid-studios.no/assets/og-image.png">
 
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/base.css">
 </head>
 <body>
 
-<nav class="nav" id="nav" aria-label="Main navigation">
-  <a class="brand" href="/">
-    <span class="brand-mark" aria-hidden="true"></span>
-    <span class="wm">NID Studios</span>
-  </a>
+<nav class="nav" aria-label="Main navigation">
+  <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span><span class="wm">NID Studios</span></a>
   <ul class="nav-links" role="list">
-    <li><a href="/"              >Home</a></li>
-    <li><a href="/about.html"    >About</a></li>
-    <li><a href="/services.html" >Services</a></li>
-    <li><a href="/work.html"     aria-current="page">Work</a></li>
-    <li><a href="/contact.html"  >Contact</a></li>
+    <li><a href="/"            >Home</a></li>
+    <li><a href="/#philosophy" >Studio</a></li>
+    <li><a href="/#services"   >Services</a></li>
+    <li><a href="/work.html"    aria-current="page">Work</a></li>
+    <li><a href="/#contact"    >Contact</a></li>
   </ul>
-  <div class="nav-cta" id="clock" aria-label="Current time in Trondheim"></div>
+  <div class="clock" id="clock" title="Trondheim" aria-label="Current time in Trondheim"></div>
 </nav>
 
 <main>
-
-  <!-- HERO ────────────────────────────────────────────────── -->
-  <header class="hero hero--compact">
-    <div class="hero-grid" aria-hidden="true"></div>
-    <div class="shell hero-inner">
-      <div class="hero-meta">
-        <span class="cross">04 — Work</span>
-        <span>1 project shipped</span>
-        <span>2026</span>
+  <header class="work-masthead">
+    <div class="shell">
+      <p class="label">Work</p>
+      <div class="metastrip">
+        <span class="accent">Two projects shipped</span>
+        <span>2026 · Trondheim</span>
       </div>
-      <h1>
-        <span class="line"><span>What we've</span></span>
-        <span class="line"><span><em>shipped.</em></span></span>
-      </h1>
+      <h1>What we've <em>shipped.</em></h1>
     </div>
   </header>
 
-  <!-- FEATURED ────────────────────────────────────────────── -->
-  <section class="section work-roulette" aria-labelledby="featured-heading">
+  <section class="section" aria-labelledby="index-heading">
     <div class="shell">
-      <div class="reveal">
-        <div class="section-head">
-          <p class="label">Featured</p>
-          <h2 id="featured-heading">The work.</h2>
-        </div>
+      <div class="svc-head">
+        <h2 id="index-heading">Selected work.</h2>
       </div>
+      <div class="proj-list">
 
-      <a href="https://kslart.no" target="_blank" rel="noopener noreferrer" style="display: block; text-decoration: none; color: inherit;">
-        <div class="roulette-stage reveal" data-d="1">
-          <div class="roulette-image-stack">
-            <div class="roulette-image active"
-                 data-title="KSLART"
-                 data-sector="Fine art"
-                 data-year="2026"
-                 data-tag="Studio site"
-                 data-note="A portfolio for artist Kim Søren Larsen. Clients browse works and get in contact to buy."
-                 data-photo="kslart-preview.jpg"
-                 aria-hidden="false"></div>
+        <a class="proj" href="https://gurman.no" target="_blank" rel="noopener noreferrer">
+          <span class="proj-num">01 / II</span>
+          <div class="proj-head">
+            <h3 class="proj-name">Gurman</h3>
+            <div class="proj-meta">
+              <span>Restaurant</span><span class="dot">·</span>
+              <span>Trondheim</span><span class="dot">·</span>
+              <span>2026</span>
+            </div>
           </div>
-
-          <div class="roulette-info">
-            <div class="roulette-eyebrow">Fine art · 2026</div>
-            <h3 class="roulette-title">KSLART</h3>
-            <p class="roulette-note">A portfolio for artist Kim Søren Larsen. Clients browse works and get in contact to buy.</p>
-            <div class="roulette-tags"><span class="tg">Studio site</span></div>
+          <div class="proj-body">
+            <p class="proj-desc">A two-part menu site for a Croatian restaurant in Trondheim: a clean, scannable course-by-course index, and signature dishes told in full — large photo beside provenance, price and story.</p>
+            <span class="proj-tag">Menu site</span>
           </div>
-        </div>
-      </a>
-    </div>
-  </section>
+          <span class="proj-arr" aria-hidden="true">↗</span>
+        </a>
 
-  <!-- FULL INDEX ──────────────────────────────────────────── -->
-  <section class="section alt" aria-labelledby="index-heading">
-    <div class="shell">
-      <div class="reveal">
-        <div class="section-head">
-          <p class="label">All projects</p>
-          <h2 id="index-heading">The full index.</h2>
-        </div>
-      </div>
-      <div class="work-list reveal" data-d="1">
-
-        <a href="https://kslart.no" target="_blank" rel="noopener noreferrer" class="work-row" style="text-decoration: none; color: inherit;">
-          <div class="work-num">01 / 01</div>
-          <div class="work-thumb"><img src="/assets/photos/kslart-preview.jpg" alt="" aria-hidden="true" width="96" height="64" loading="lazy"></div>
-          <div class="work-title">KSLART</div>
-          <div class="work-meta">Fine art</div>
-          <div class="work-meta">2026 · Studio site</div>
-          <div class="work-arr">→</div>
+        <a class="proj" href="https://kslart.no" target="_blank" rel="noopener noreferrer">
+          <span class="proj-num">02 / II</span>
+          <div class="proj-head">
+            <h3 class="proj-name">KSLART</h3>
+            <div class="proj-meta">
+              <span>Fine art</span><span class="dot">·</span>
+              <span>2026</span>
+            </div>
+          </div>
+          <div class="proj-body">
+            <p class="proj-desc">A portfolio for fine artist Kim Søren Larsen. Visitors browse the work and get in touch to buy — a quiet, image-led studio site that puts the paintings first.</p>
+            <span class="proj-tag">Studio site</span>
+          </div>
+          <span class="proj-arr" aria-hidden="true">↗</span>
         </a>
 
       </div>
     </div>
   </section>
 
+  <section class="section alt" id="contact" aria-labelledby="cta-heading">
+    <div class="shell cta">
+      <p class="label">Next</p>
+      <h2 id="cta-heading">Want to be<br>the next one?</h2>
+      <a href="mailto:studio@nid-studios.no" class="mail">studio@nid-studios.no</a>
+    </div>
+  </section>
 </main>
 
 <footer class="foot" aria-label="Footer">
-  <div class="col">
-    <span class="h">NID Studios</span>
-    <span>Somewhere in Trondheim, Norway</span>
-  </div>
-  <div class="col">
-    <span class="h">Direct</span>
-    <a href="mailto:studio@nid-studios.no">studio@nid-studios.no</a>
-    <a href="/contact.html">Send a brief →</a>
-  </div>
-  <div class="col right">
-    <span class="h">v.01.04 / IV</span>
-    <span>© 2026 NID Studios</span>
-  </div>
-  <div class="tags-row">
-    <span class="tg">[CSP <span class="ck">✓</span>]</span>
-    <span class="tg">[Lighthouse 98]</span>
-    <span class="tg">[GDPR clean]</span>
-    <span class="tg meta">[Est. 2026]</span>
-    <span class="tg meta">[N&nbsp;63.430 / E&nbsp;10.395]</span>
-  </div>
+  <span>© 2026 NID Studios</span>
+  <span class="river">NID — from the river Nid, Trondheim.</span>
 </footer>
 
-<script src="/main.js" defer></script>
+<script src="/clock.js" defer></script>
 </body>
 </html>

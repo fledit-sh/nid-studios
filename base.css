@@ -206,5 +206,35 @@ h1,h2,h3{font-family:var(--f-display); font-weight:700; margin:0; text-wrap:bala
 .clock-time{font-weight:500; color:#fff;}
 .clock-sep{opacity:.5;}
 .clock-loc{opacity:.7; text-transform:uppercase; letter-spacing:.14em; font-size:11px;}
+/* dark-on-light variant when the clock sits in the standard sticky nav */
+.nav .clock{color:var(--fg-soft);}
+.nav .clock-time{color:var(--fg);}
 @media(max-width:560px){ .clock-loc,.clock-sep{display:none;} }
 @media(max-width:820px){ .hero-nav .nav-links{display:none;} }
+
+/* ── WORK / PROJECTS PAGE ────────────────────────── */
+.work-masthead{padding:clamp(88px,15vh,168px) 0 clamp(40px,6vw,72px); border-bottom:1px solid var(--rule);}
+.work-masthead .metastrip{margin-top:26px; color:var(--meta);}
+.work-masthead h1{margin-top:22px; font-size:clamp(48px,9vw,118px); line-height:.92; letter-spacing:-.02em; text-transform:uppercase;}
+.work-masthead h1 em{font-style:normal; color:var(--accent);}
+
+.proj-list{display:grid; gap:0; border-top:1px solid var(--rule-strong);}
+.proj{
+  display:grid; grid-template-columns:90px 1fr minmax(0,44ch) auto; gap:32px; align-items:start;
+  padding:44px 0; border-bottom:1px solid var(--rule);
+  transition:padding-left var(--ease) .3s, background var(--ease) .3s;
+}
+a.proj:hover{padding-left:14px;}
+.proj-num{font-family:var(--f-display); font-size:13px; letter-spacing:.1em; color:var(--meta); padding-top:8px;}
+.proj-name{font-family:var(--f-display); font-weight:700; font-size:clamp(28px,4.4vw,52px); line-height:1; text-transform:uppercase;}
+.proj-meta{margin-top:16px; display:flex; gap:10px; flex-wrap:wrap; font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--meta);}
+.proj-meta .dot{opacity:.5;}
+.proj-desc{font-size:14px; line-height:1.7; color:var(--fg-soft);}
+.proj-tag{display:inline-block; margin-top:18px; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--fg); border:1px solid var(--rule-strong); padding:5px 11px;}
+.proj-arr{font-family:var(--f-display); font-size:22px; color:var(--accent); padding-top:6px; transition:transform var(--ease) .3s;}
+a.proj:hover .proj-arr{transform:translate(6px,-6px);}
+@media(max-width:860px){
+  .proj{grid-template-columns:1fr; gap:14px; padding:36px 0;}
+  .proj-num{padding-top:0;}
+  .proj-arr{display:none;}
+}
