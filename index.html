@@ -1,262 +1,192 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NID Studios — Secure, simple, you.</title>
-  <meta name="description" content="A web studio from Trondheim. We build fast, secure websites for people who care about how they show up online. No templates. No shortcuts.">
-
-  <meta property="og:type"        content="website">
-  <meta property="og:url"         content="https://nid-studios.no/">
-  <meta property="og:title"       content="NID Studios — Secure, simple, you.">
-  <meta property="og:description" content="A web studio from Trondheim. We build fast, secure websites for people who care about how they show up online.">
-  <meta property="og:image"       content="https://nid-studios.no/assets/og-image.png">
-  <meta name="twitter:card"       content="summary_large_image">
-  <meta name="twitter:title"      content="NID Studios — Secure, simple, you.">
-  <meta name="twitter:description" content="A web studio from Trondheim. We build fast, secure, personal websites.">
-  <meta name="twitter:image"      content="https://nid-studios.no/assets/og-image.png">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "NID Studios",
-    "url": "https://nid-studios.no",
-    "email": "studio@nid-studios.no",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Trondheim",
-      "addressCountry": "NO"
-    }
-  }
-  </script>
-
-  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-  <link rel="stylesheet" href="/style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NID Studios — Secure, simple, you.</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href="base.css">
+<style>
+  .photo-hero{position:relative; aspect-ratio:3/2; min-height:560px; display:flex; flex-direction:column; color:#F4F3F0; overflow:hidden;}
+  .photo-hero .bg img{width:100%; height:100%; object-fit:cover; object-position:center; filter:grayscale(1) contrast(1.04) brightness(.92);}
+  .photo-hero .bg{position:absolute; inset:0;}
+  .photo-hero .scrim{position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(10,10,10,.62) 0%, rgba(10,10,10,.42) 34%, rgba(10,10,10,.10) 62%, rgba(10,10,10,.30) 100%);}
+  /* hero nav (over photo) */
+  .hero-nav{position:relative; z-index:2; display:flex; align-items:center; justify-content:space-between; padding:24px var(--gutter);}
+  .hero-nav .wm{color:#fff;}
+  .hero-nav .brand-mark::before{border-color:#fff;}
+  .hero-nav .brand-mark::after{border-color:var(--accent);}
+  .hero-nav .nav-links a{color:rgba(255,255,255,.72);}
+  .hero-nav .nav-links a:hover{color:#fff;}
+  .hero-nav .nav-place{color:rgba(255,255,255,.6);}
+  .photo-hero .inner{position:relative; z-index:2; margin-top:clamp(32px,7vh,84px); padding-bottom:clamp(40px,6vw,72px);}
+  .photo-hero .metastrip{color:rgba(255,255,255,.7); margin-bottom:26px;}
+  .photo-hero .metastrip .accent{color:#fff;}
+  .photo-hero h1{font-size:clamp(52px,10vw,132px); line-height:.9; letter-spacing:-.02em; text-transform:uppercase; color:#fff;}
+  .photo-hero h1 em{font-style:normal; color:var(--accent);}
+  .photo-hero .hero-foot{display:flex; justify-content:space-between; align-items:flex-end; gap:32px; flex-wrap:wrap; margin-top:34px;}
+  .photo-hero .hero-tag{max-width:44ch; color:rgba(255,255,255,.82); font-size:clamp(15px,1.5vw,17px); line-height:1.7;}
+  .photo-hero .hero-tag b{color:#fff;}
+  .photo-hero .btn{border-color:#fff; color:#fff;}
+  .photo-hero .btn::before{background:#fff;}
+  .photo-hero .btn:hover{color:#111;}
+  .photo-hero .cap{position:absolute; right:14px; bottom:12px; z-index:2; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.6);}
+  /* Trondheim clock (sun/moon arc + Nidarosdomen) */
+  .clock{display:flex; align-items:center; gap:8px; color:rgba(255,255,255,.82); font-family:var(--f-mono); font-size:12px; letter-spacing:.04em;}
+  .clock-arc{display:block; flex:none;}
+  .clock-time{font-weight:500; color:#fff;}
+  .clock-sep{opacity:.5;}
+  .clock-loc{opacity:.7; text-transform:uppercase; letter-spacing:.14em; font-size:11px;}
+  @media(max-width:560px){ .clock-loc,.clock-sep{display:none;} }
+  @media(max-width:820px){ .hero-nav .nav-links{display:none;} }
+</style>
 </head>
 <body>
 
-<nav class="nav" id="nav" aria-label="Main navigation">
-  <a class="brand" href="/">
-    <span class="brand-mark" aria-hidden="true"></span>
-    <span class="wm">NID Studios</span>
-  </a>
-  <ul class="nav-links" role="list">
-    <li><a href="/"              aria-current="page">Home</a></li>
-    <li><a href="/about.html"   >About</a></li>
-    <li><a href="/services.html">Services</a></li>
-    <li><a href="/work.html"    >Work</a></li>
-    <li><a href="/contact.html" >Contact</a></li>
-  </ul>
-  <div class="nav-cta" id="clock" aria-label="Current time in Trondheim"></div>
-</nav>
-
 <main>
+  <header class="photo-hero">
+    <div class="bg"><img src="assets/pier-fjord.jpg" alt="Concrete pier reaching out into the Trondheim fjord under an overcast sky."></div>
+    <div class="scrim"></div>
 
-  <!-- HERO ────────────────────────────────────────────────── -->
-  <header class="hero" id="top">
-    <div class="hero-grid" aria-hidden="true"></div>
-    <div class="shell hero-inner hero-inner--split">
-      <div class="hero-text">
-        <div class="hero-meta">
-          <span class="cross">N&nbsp;63.430 / E&nbsp;10.395 — Trondheim</span>
-          <span>Est.&nbsp;2026 · Independent</span>
-        </div>
-        <h1>
-          <span class="line"><span>Secure,</span></span>
-          <span class="line"><span>simple,</span></span>
-          <span class="line"><span><em>you.</em></span></span>
-        </h1>
-        <div class="hero-foot">
-          <p class="hero-tag">
-            A web studio from <b>Trondheim</b>. We build fast, secure websites for people who care about <b>how they show up online</b>. No templates. No shortcuts.
-          </p>
-          <a href="/contact.html" class="btn">Send a brief <span class="arr">→</span></a>
-        </div>
+    <nav class="hero-nav" aria-label="Main">
+      <a class="brand" href="#"><span class="brand-mark" aria-hidden="true"></span><span class="wm">NID Studios</span></a>
+      <ul class="nav-links" role="list">
+        <li><a href="#" aria-current="page">Home</a></li>
+        <li><a href="#philosophy">Studio</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="clock" id="clock" title="Trondheim" aria-label="Current time in Trondheim"></div>
+    </nav>
+
+    <div class="shell inner">
+      <div class="metastrip">
+        <span class="accent">N 63.430 / E 10.395 — Trondheim</span>
+        <span>Est. 2026 · Independent</span>
       </div>
-      <div class="paper-plate" aria-hidden="true">
-        <video class="paper-plate-video" src="/assets/footage/crumpled-paper.mp4" autoplay loop muted playsinline preload="auto"></video>
-        <div class="paper-plate-grain"></div>
-        <div class="paper-plate-vig"></div>
-        <div class="paper-plate-crops">
-          <i></i><i></i><i></i><i></i>
-        </div>
-        <div class="paper-plate-reveal" id="paper-plate-reveal">
-          <p class="paper-plate-h">Make web <em>beautiful.</em></p>
-        </div>
-        <a class="paper-plate-credit" href="https://www.vecteezy.com/free-videos/crumpled-paper-stop-motion" target="_blank" rel="noopener noreferrer">
-          [Footage <span class="arr">↗</span><span class="expand">Crumpled Paper Stop Motion Stock Videos by Vecteezy</span>]
-        </a>
+      <h1>Secure,<br>simple, <em>you.</em></h1>
+      <div class="hero-foot">
+        <p class="hero-tag">A web studio from <b>Trondheim</b>. We build fast, secure websites for people who care about <b>how they show up online</b>.</p>
+        <a href="#contact" class="btn">Send a brief <span class="arr">→</span></a>
       </div>
     </div>
+    <span class="cap">Trondheimsfjorden · 35mm</span>
   </header>
 
-  <!-- MAKE WEB BEAUTIFUL ──────────────────────────────────── -->
-  <section class="mwb section" aria-labelledby="mwb-heading">
+  <section class="section philo" id="philosophy">
     <div class="shell">
-      <p class="mwb-meta">Manifesto</p>
-      <h2 id="mwb-heading" class="reveal">
-        Make web <em>beautiful.</em>
-      </h2>
-      <div class="mwb-foot reveal" data-d="1">
-        <p class="mwb-body">
-          Cheap, fast websites should still be <b>gorgeous, personal, and purposeful</b>. Not mass-produced. Not templated. Yours.
-        </p>
-        <a href="/contact.html" class="btn">Start a brief <span class="arr">→</span></a>
-      </div>
+      <p class="label">Studio</p>
+      <h2 style="margin-top:22px;">Make web <em>beautiful.</em></h2>
+      <p class="philo-body">We're a small local studio — the people you talk to are the people who build your site. Cheap, fast websites should still be <b>gorgeous, personal, and purposeful</b>. No templates. No shortcuts. Yours.</p>
     </div>
   </section>
 
-  <!-- SERVICES ────────────────────────────────────────────── -->
-  <section class="section" id="services" aria-labelledby="services-heading">
+  <section class="section alt" id="services">
     <div class="shell">
-      <div class="reveal">
-        <div class="section-head">
-          <p class="label">01 — Capabilities</p>
-          <h2 id="services-heading">Two offerings.<br><span class="it">One studio.</span></h2>
+      <div class="svc-head">
+        <div>
+          <p class="label">Services</p>
+          <h2 style="margin-top:22px;">Two offerings.<br>One studio.</h2>
         </div>
+        <p class="meta" style="font-size:13px; max-width:30ch;">Hand-built, self-hosted, yours to keep.</p>
       </div>
-
-      <div class="case reveal" data-d="1">
-
-        <div class="drawer" role="group" aria-labelledby="drawer-name-1">
-          <div class="drawer-num">01 / II</div>
-          <div class="drawer-name" id="drawer-name-1">
-            Static Site
-            <span class="sub">— single page, hand-built</span>
-          </div>
-          <div class="drawer-copy">A self-hosted page that loads in under a second. Form, copy, fonts — all yours.</div>
-          <button class="drawer-pull" aria-expanded="false" aria-controls="drawer-detail-1" type="button">
-            <span class="pull-label">Open</span>
-            <span class="pull" aria-hidden="true"></span>
-          </button>
-          <div class="drawer-detail" id="drawer-detail-1">
-            <div class="drawer-detail-inner">
-              <div></div>
-              <div class="drawer-detail-body">
-                <div class="spec">
-                  <p class="prose">A single, hand-built page — your name, your work, your contact form. Nothing borrowed, nothing generic. One page that does exactly what it needs to.</p>
-                  <h4>What you leave with</h4>
-                  <ul>
-                    <li><span>A live page on your domain</span></li>
-                    <li><span>Contact form straight to your inbox</span><span class="v">no backend</span></li>
-                    <li><span>Fast to load</span><span class="v">every time</span></li>
-                    <li><span>Full source code</span><span class="v">yours, no lock-in</span></li>
-                  </ul>
-                </div>
-              </div>
-              <div></div>
-            </div>
-          </div>
+      <div class="svc-list">
+        <div class="svc-row">
+          <span class="svc-num">01 / II</span>
+          <span class="svc-name">Static Site<span class="sub">single page, hand-built</span></span>
+          <span class="svc-desc">A self-hosted page that loads in under a second. Form, copy, fonts — all yours.</span>
         </div>
-
-        <div class="drawer" role="group" aria-labelledby="drawer-name-2">
-          <div class="drawer-num">02 / II</div>
-          <div class="drawer-name" id="drawer-name-2">
-            Studio Site
-            <span class="sub">— multi-page, CMS-driven</span>
-          </div>
-          <div class="drawer-copy">Five pages, a /work section in Sanity, custom illustration, three rounds.</div>
-          <button class="drawer-pull" aria-expanded="false" aria-controls="drawer-detail-2" type="button">
-            <span class="pull-label">Open</span>
-            <span class="pull" aria-hidden="true"></span>
-          </button>
-          <div class="drawer-detail" id="drawer-detail-2">
-            <div class="drawer-detail-inner">
-              <div></div>
-              <div class="drawer-detail-body">
-                <div class="spec">
-                  <p class="prose">Five pages built as a set — home, about, work, services, contact. A /work section you can update yourself, no developer needed. Custom illustration for every page. We built one for Kim Søren Larsen (kslart.no): a portfolio where clients browse works and get in contact to buy.</p>
-                  <h4>What you leave with</h4>
-                  <ul>
-                    <li><span>Five pages, designed as one</span></li>
-                    <li><span>A content editor for /work</span><span class="v">add projects yourself</span></li>
-                    <li><span>Illustration set for your brand</span><span class="v">every page</span></li>
-                    <li><span>Walkthrough + 90-day check-in</span><span class="v">after launch</span></li>
-                  </ul>
-                </div>
-              </div>
-              <div></div>
-            </div>
-          </div>
-        </div>
-
-      </div><!-- .case -->
-    </div><!-- .shell -->
-  </section>
-
-  <!-- WHY US ──────────────────────────────────────────────── -->
-  <section class="section alt" id="why" aria-labelledby="why-heading">
-    <div class="shell">
-      <div class="reveal">
-        <div class="section-head">
-          <p class="label">02 — Why Us</p>
-          <h2 id="why-heading">Small local studio.<br><span class="it">Means you're in focus.</span></h2>
-        </div>
-      </div>
-      <div class="reveal" data-d="1">
-        <p class="why-stmt">We're a small local studio — the people you talk to are the same people who build your site. We keep it personal, move quickly, and care about every detail. Beautiful, personal websites without the agency overhead.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROCESS ─────────────────────────────────────────────── -->
-  <section class="section" id="process" aria-labelledby="process-heading">
-    <div class="shell">
-      <div class="reveal">
-        <div class="section-head">
-          <p class="label">03 — Method</p>
-          <h2 id="process-heading">Three stages.<br><span class="it">No improvisation.</span></h2>
-        </div>
-      </div>
-      <div class="process-track reveal" data-d="1">
-        <div class="step">
-          <div class="node" aria-hidden="true"></div>
-          <p class="num">Stage 01</p>
-          <h3>Brief</h3>
-          <p>You tell us what you're trying to build. We ask questions and listen for the things you haven't said yet.</p>
-        </div>
-        <div class="step">
-          <div class="node" aria-hidden="true"></div>
-          <p class="num">Stage 02</p>
-          <h3>Launch</h3>
-          <p>We build, you watch. Check-ins along the way, no ghost weeks. You see what we see: raw versions and all.</p>
-        </div>
-        <div class="step">
-          <div class="node" aria-hidden="true"></div>
-          <p class="num">Stage 03</p>
-          <h3>Follow-up</h3>
-          <p>We ship, walk you through it, and stay in touch for 90 days. The site is yours, and so is the conversation.</p>
+        <div class="svc-row">
+          <span class="svc-num">02 / II</span>
+          <span class="svc-name">Studio Site<span class="sub">multi-page, CMS-driven</span></span>
+          <span class="svc-desc">Five pages designed as one, a /work section you update yourself, custom illustration throughout.</span>
         </div>
       </div>
     </div>
   </section>
 
+  <section class="section" id="contact">
+    <div class="shell cta">
+      <p class="label">Contact</p>
+      <h2>Send a brief.<br>We'll read it<br>the same day.</h2>
+      <a href="/cdn-cgi/l/email-protection#afdcdbdacbc6c0efc1c6cb82dcdbdacbc6c0dc81c1c0" class="mail"><span class="__cf_email__" data-cfemail="a4d7d0d1c0cdcbe4cacdc089d7d0d1c0cdcbd78acacb">[email&#160;protected]</span></a>
+    </div>
+  </section>
 </main>
 
-<footer class="foot" aria-label="Footer">
-  <div class="col">
-    <span class="h">NID Studios</span>
-    <span>Somewhere in Trondheim, Norway</span>
-  </div>
-  <div class="col">
-    <span class="h">Direct</span>
-    <a href="mailto:studio@nid-studios.no">studio@nid-studios.no</a>
-    <a href="/contact.html">Send a brief →</a>
-  </div>
-  <div class="col right">
-    <span class="h">v.01.04 / IV</span>
-    <span>© 2026 NID Studios</span>
-  </div>
-  <div class="tags-row">
-    <span class="tg">[CSP <span class="ck">✓</span>]</span>
-    <span class="tg">[Lighthouse 98]</span>
-    <span class="tg">[GDPR clean]</span>
-    <span class="tg meta">[Est. 2026]</span>
-    <span class="tg meta">[N&nbsp;63.430 / E&nbsp;10.395]</span>
-  </div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+(function(){
+  function trondheimContext(now){
+    now = now || new Date();
+    var fmt = function(opts){ return new Intl.DateTimeFormat('en-GB', Object.assign({timeZone:'Europe/Oslo', hour12:false}, opts)).format(now); };
+    var hh = parseInt(fmt({hour:'2-digit'}),10);
+    var mm = parseInt(fmt({minute:'2-digit'}),10);
+    var localHour = hh + mm/60;
+    var timeStr = String(hh).padStart(2,'0')+':'+String(mm).padStart(2,'0');
+    var yearStart = new Date(now.getFullYear(),0,0);
+    var dayOfYear = Math.floor((now - yearStart)/86400000);
+    var lat = 63.4*Math.PI/180;
+    var delta = 23.44*Math.PI/180*Math.sin(2*Math.PI*(dayOfYear-80)/365);
+    var cosH = -Math.tan(lat)*Math.tan(delta);
+    var sunrise, sunset, isDay, progress;
+    if(cosH>1){ sunrise=12; sunset=12; isDay=false; progress=(localHour<12?localHour+12:localHour-12)/24; }
+    else if(cosH<-1){ sunrise=0; sunset=24; isDay=true; progress=localHour/24; }
+    else {
+      var halfDay = Math.acos(cosH)*12/Math.PI;
+      sunrise = 12-halfDay; sunset = 12+halfDay;
+      isDay = localHour>=sunrise && localHour<=sunset;
+      if(isDay){ progress=(localHour-sunrise)/(sunset-sunrise); }
+      else { var nightLen=24-(sunset-sunrise); var ne=(localHour>sunset)?(localHour-sunset):(localHour+(24-sunset)); progress=ne/nightLen; }
+    }
+    return {timeStr:timeStr, isDay:isDay, progress:progress};
+  }
+  var SVGNS='http://www.w3.org/2000/svg';
+  function el(name,attrs){ var e=document.createElementNS(SVGNS,name); for(var k in attrs){ e.setAttribute(k,attrs[k]); } return e; }
+  function render(){
+    var host = document.getElementById('clock');
+    if(!host) return;
+    var ctx = trondheimContext();
+    var W=64,H=22,pad=5, horizonY=H-4, peakY=3;
+    var x = pad + ctx.progress*(W-2*pad);
+    var y = horizonY - (horizonY-peakY)*Math.sin(Math.PI*ctx.progress);
+    host.innerHTML='';
+    var svg = el('svg',{'class':'clock-arc',viewBox:'0 0 '+W+' '+H,width:W,height:H,'aria-hidden':'true'});
+    svg.appendChild(el('line',{x1:pad-1,y1:horizonY,x2:W-pad+1,y2:horizonY,stroke:'currentColor','stroke-width':'0.5',opacity:'0.28'}));
+    svg.appendChild(el('path',{d:'M '+pad+' '+horizonY+' Q '+(W/2)+' '+(peakY-4)+' '+(W-pad)+' '+horizonY,fill:'none',stroke:'currentColor','stroke-width':'0.4','stroke-dasharray':'1.2 2',opacity:'0.22'}));
+    svg.appendChild(el('path',{'class':'clock-cathedral',d:'M 18 18 L 18 11 L 24 11 L 24 14 L 31.5 11 L 31.5 8 L 32 5 L 32.5 8 L 32.5 11 L 40 14 L 40 11 L 46 11 L 46 18 Z',fill:'currentColor',opacity:'0.55'}));
+    if(ctx.isDay){
+      var g = el('g',{'class':'clock-sun'});
+      [0,45,90,135].forEach(function(a){
+        g.appendChild(el('line',{x1:x-5,y1:y,x2:x+5,y2:y,transform:'rotate('+a+' '+x+' '+y+')',stroke:'var(--accent)','stroke-width':'0.55','stroke-linecap':'round',opacity:'0.55'}));
+      });
+      g.appendChild(el('circle',{cx:x,cy:y,r:'2.6',fill:'var(--accent)'}));
+      svg.appendChild(g);
+    } else {
+      var defs = el('defs',{});
+      var mask = el('mask',{id:'clock-crescent'});
+      mask.appendChild(el('rect',{width:W,height:H,fill:'white'}));
+      mask.appendChild(el('circle',{cx:x+1.8,cy:y-0.7,r:'2.5',fill:'black'}));
+      defs.appendChild(mask); svg.appendChild(defs);
+      svg.appendChild(el('circle',{cx:x,cy:y,r:'2.8',fill:'currentColor',mask:'url(#clock-crescent)'}));
+    }
+    host.appendChild(svg);
+    var t=document.createElement('span'); t.className='clock-time'; t.textContent=ctx.timeStr; host.appendChild(t);
+    var s=document.createElement('span'); s.className='clock-sep'; s.textContent='·'; host.appendChild(s);
+    var l=document.createElement('span'); l.className='clock-loc'; l.textContent='Trondheim'; host.appendChild(l);
+  }
+  render();
+  setInterval(render, 30000);
+})();
+</script>
+
+<footer class="foot">
+  <span>© 2026 NID Studios</span>
+  <span class="river">NID — from the river Nid, Trondheim.</span>
 </footer>
 
-<script src="/main.js" defer></script>
 </body>
 </html>
