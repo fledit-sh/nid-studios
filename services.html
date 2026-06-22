@@ -17,7 +17,7 @@
 </head>
 <body>
 
-<nav class="nav" id="nav" aria-label="Main navigation">
+<nav class="topbar" id="topbar" aria-label="Main navigation">
   <a class="brand" href="/">
     <span class="brand-mark" aria-hidden="true"></span>
     <span class="wm">NID Studios</span>
@@ -26,10 +26,14 @@
     <li><a href="/"              >Home</a></li>
     <li><a href="/about.html"    >About</a></li>
     <li><a href="/services.html" aria-current="page">Services</a></li>
-    <li><a href="/work.html"     >Work</a></li>
     <li><a href="/contact.html"  >Contact</a></li>
   </ul>
-  <div class="nav-cta" id="clock" aria-label="Current time in Trondheim"></div>
+  <div class="nav-end">
+    <span class="nav-div" aria-hidden="true"></span>
+    <a class="work-link" href="/work.html">Work <span class="arr" aria-hidden="true">↗</span></a>
+    <div class="clock" id="clock" aria-label="Current time in Trondheim"></div>
+  </div>
+  <span class="scroll-progress" id="progress" aria-hidden="true"></span>
 </nav>
 
 <main>
@@ -152,6 +156,7 @@
   </div>
 </footer>
 
+<script src="/nav.js" defer></script>
 <script src="/main.js" defer></script>
 </body>
 </html>

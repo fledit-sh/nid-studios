@@ -6,18 +6,8 @@
 (function () {
   'use strict';
 
-  // ── 1. NAV SCROLL STATE ──────────────────────────────────
-  const nav = document.getElementById('nav');
-  if (nav) {
-    const root = document.scrollingElement || document.documentElement;
-    function onScroll() {
-      nav.classList.toggle('scrolled', root.scrollTop > 24 || window.scrollY > 24);
-    }
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-  }
-
-  // ── 2. TRONDHEIM CLOCK ───────────────────────────────────
+  // ── 1. TRONDHEIM CLOCK ───────────────────────────────────
+  //   (Sticky-topbar scroll state lives in nav.js, loaded site-wide.)
   function trondheimContext() {
     const now = new Date();
     const fmt = function (opts) {
