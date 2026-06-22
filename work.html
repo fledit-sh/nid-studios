@@ -21,16 +21,20 @@
 </head>
 <body>
 
-<nav class="nav" aria-label="Main navigation">
+<nav class="topbar" id="topbar" aria-label="Main navigation">
   <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span><span class="wm">NID Studios</span></a>
   <ul class="nav-links" role="list">
     <li><a href="/"            >Home</a></li>
     <li><a href="/#philosophy" >Studio</a></li>
     <li><a href="/#services"   >Services</a></li>
-    <li><a href="/work.html"    aria-current="page">Work</a></li>
     <li><a href="/#contact"    >Contact</a></li>
   </ul>
-  <div class="clock" id="clock" title="Trondheim" aria-label="Current time in Trondheim"></div>
+  <div class="nav-end">
+    <span class="nav-div" aria-hidden="true"></span>
+    <a class="work-link" href="/work.html" aria-current="page">Work <span class="arr" aria-hidden="true">↗</span></a>
+    <div class="clock" id="clock" title="Trondheim" aria-label="Current time in Trondheim"></div>
+  </div>
+  <span class="scroll-progress" id="progress" aria-hidden="true"></span>
 </nav>
 
 <main>
@@ -104,5 +108,6 @@
 </footer>
 
 <script src="/clock.js" defer></script>
+<script src="/nav.js" defer></script>
 </body>
 </html>

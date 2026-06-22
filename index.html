@@ -6,66 +6,29 @@
 <title>NID Studios — Secure, simple, you.</title>
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="stylesheet" href="base.css">
-<style>
-  .photo-hero{position:relative; aspect-ratio:3/2; min-height:560px; display:flex; flex-direction:column; color:#F4F3F0; overflow:hidden;}
-  .photo-hero .bg img{width:100%; height:100%; object-fit:cover; object-position:center; filter:grayscale(1) contrast(1.04) brightness(.92);}
-  .photo-hero .bg{position:absolute; inset:0;}
-  .photo-hero .scrim{position:absolute; inset:0;
-    background:linear-gradient(180deg, rgba(10,10,10,.62) 0%, rgba(10,10,10,.42) 34%, rgba(10,10,10,.10) 62%, rgba(10,10,10,.30) 100%);}
-  /* hero nav (over photo) */
-  .hero-nav{position:relative; z-index:2; display:flex; align-items:center; justify-content:space-between; padding:24px var(--gutter);}
-  .hero-nav .wm{color:#fff;}
-  .hero-nav .brand-mark::before{border-color:#fff;}
-  .hero-nav .brand-mark::after{border-color:var(--accent);}
-  .hero-nav .nav-links a{color:rgba(255,255,255,.72);}
-  .hero-nav .nav-links a:hover{color:#fff;}
-  .hero-nav .nav-place{color:rgba(255,255,255,.6);}
-  .photo-hero .inner{position:relative; z-index:2; margin-top:clamp(32px,7vh,84px); padding-bottom:clamp(40px,6vw,72px);}
-  .photo-hero .metastrip{color:rgba(255,255,255,.7); margin-bottom:26px;}
-  .photo-hero .metastrip .accent{color:#fff;}
-  .photo-hero h1{font-size:clamp(52px,10vw,132px); line-height:.9; letter-spacing:-.02em; text-transform:uppercase; color:#fff;}
-  .photo-hero h1 em{font-style:normal; color:var(--accent);}
-  .photo-hero .hero-foot{display:flex; justify-content:space-between; align-items:flex-end; gap:32px; flex-wrap:wrap; margin-top:34px;}
-  .photo-hero .hero-tag{max-width:44ch; color:rgba(255,255,255,.82); font-size:clamp(15px,1.5vw,17px); line-height:1.7;}
-  .photo-hero .hero-tag b{color:#fff;}
-  .photo-hero .btn{border-color:#fff; color:#fff;}
-  .photo-hero .btn::before{background:#fff;}
-  .photo-hero .btn:hover{color:#111;}
-  .photo-hero .cap{position:absolute; right:14px; bottom:12px; z-index:2; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.6);}
-  /* Trondheim clock (sun/moon arc + Nidarosdomen) */
-  .clock{display:flex; align-items:center; gap:8px; color:rgba(255,255,255,.82); font-family:var(--f-mono); font-size:12px; letter-spacing:.04em;}
-  .clock-arc{display:block; flex:none;}
-  .clock-time{font-weight:500; color:#fff;}
-  .clock-sep{opacity:.5;}
-  .clock-loc{opacity:.7; text-transform:uppercase; letter-spacing:.14em; font-size:11px;}
-  @media(max-width:560px){ .clock-loc,.clock-sep{display:none;} }
-  @media(max-width:820px){ .hero-nav .nav-links{display:none;} }
-  @media(max-width:560px){
-    .photo-hero{aspect-ratio:auto; min-height:auto;}
-    .photo-hero h1{font-size:clamp(44px,12vw,64px);}
-    .photo-hero .inner{margin-top:clamp(20px,5vh,40px);}
-    .photo-hero .hero-foot{margin-top:24px;}
-  }
-</style>
 </head>
 <body>
 
-<main>
-  <header class="photo-hero">
-    <div class="bg"><img src="assets/pier-fjord.jpg" alt="Concrete pier reaching out into the Trondheim fjord under an overcast sky."></div>
-    <div class="scrim"></div>
+<nav class="topbar over-hero" id="topbar" aria-label="Main">
+  <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"></span><span class="wm">NID Studios</span></a>
+  <ul class="nav-links" role="list">
+    <li><a href="#top" aria-current="page">Home</a></li>
+    <li><a href="#philosophy">Studio</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-end">
+    <span class="nav-div" aria-hidden="true"></span>
+    <a class="work-link" href="/work.html">Work <span class="arr" aria-hidden="true">↗</span></a>
+    <div class="clock" id="clock" title="Trondheim" aria-label="Current time in Trondheim"></div>
+  </div>
+  <span class="scroll-progress" id="progress" aria-hidden="true"></span>
+</nav>
 
-    <nav class="hero-nav" aria-label="Main">
-      <a class="brand" href="#"><span class="brand-mark" aria-hidden="true"></span><span class="wm">NID Studios</span></a>
-      <ul class="nav-links" role="list">
-        <li><a href="#" aria-current="page">Home</a></li>
-        <li><a href="#philosophy">Studio</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="/work.html">Work</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <div class="clock" id="clock" title="Trondheim" aria-label="Current time in Trondheim"></div>
-    </nav>
+<main id="top">
+  <header class="photo-hero">
+    <div class="bg" data-parallax><img src="assets/pier-fjord.jpg" alt="Concrete pier reaching out into the Trondheim fjord under an overcast sky."></div>
+    <div class="scrim"></div>
 
     <div class="shell inner">
       <div class="metastrip">
@@ -123,6 +86,7 @@
 </main>
 
 <script src="clock.js" defer></script>
+<script src="nav.js" defer></script>
 
 <footer class="foot">
   <span>© 2026 NID Studios</span>
