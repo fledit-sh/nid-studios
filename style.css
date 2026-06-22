@@ -511,6 +511,12 @@ li { list-style: none; }
 .form-status { display: block; margin-top: 16px; font-family: var(--f-body); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; }
 .form-status.success { color: #2a7a2a; }
 .form-status.error   { color: var(--accent); }
+.privacy-note { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--rule); max-width: 62ch; }
+.privacy-note .tg { margin-bottom: 12px; }
+.privacy-note p { font-family: var(--f-body); font-size: 12px; line-height: 1.65; color: var(--fg-soft); }
+.privacy-note p + p { margin-top: 10px; }
+.privacy-note strong { color: var(--fg); font-weight: 500; }
+.privacy-note a { color: var(--accent); border-bottom: 1px solid var(--accent); padding-bottom: 1px; }
 .contact-side { border-left: 1px solid var(--rule); padding-left: 48px; }
 .contact-block { margin-bottom: 32px; }
 .contact-block h4 { font-family: var(--f-body); font-weight: 700; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }

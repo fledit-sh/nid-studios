@@ -1,0 +1,14 @@
+# Local-only security docs — do NOT publish on the public repo / deployed site
+SECURITY_AUDIT.md
+
+# Secrets / environment
+.env
+.env.*
+
+# Dependencies / build output
+node_modules/
+.vercel/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db

@@ -5,9 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>NID Studios — Secure, simple, you.</title>
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap">
 <link rel="stylesheet" href="base.css">
 <style>
   .photo-hero{position:relative; aspect-ratio:3/2; min-height:560px; display:flex; flex-direction:column; color:#F4F3F0; overflow:hidden;}
@@ -43,6 +40,12 @@
   .clock-loc{opacity:.7; text-transform:uppercase; letter-spacing:.14em; font-size:11px;}
   @media(max-width:560px){ .clock-loc,.clock-sep{display:none;} }
   @media(max-width:820px){ .hero-nav .nav-links{display:none;} }
+  @media(max-width:560px){
+    .photo-hero{aspect-ratio:auto; min-height:auto;}
+    .photo-hero h1{font-size:clamp(44px,12vw,64px);}
+    .photo-hero .inner{margin-top:clamp(20px,5vh,40px);}
+    .photo-hero .hero-foot{margin-top:24px;}
+  }
 </style>
 </head>
 <body>
@@ -82,31 +85,31 @@
     <div class="shell">
       <p class="label">Studio</p>
       <h2 style="margin-top:22px;">Make web <em>beautiful.</em></h2>
-      <p class="philo-body">We're a small local studio — the people you talk to are the people who build your site. Cheap, fast websites should still be <b>gorgeous, personal, and purposeful</b>. No templates. No shortcuts. Yours.</p>
+      <p class="philo-body">We're a small local studio. That means the people you talk to are the people who build your site. Cheap, fast websites should still be <b>gorgeous, personal, and purposeful</b>. No templates. No shortcuts. Yours.</p>
     </div>
   </section>
 
   <section class="section alt" id="services">
     <div class="shell">
       <div class="svc-head">
-        <div>
+        <hgroup>
           <p class="label">Services</p>
           <h2 style="margin-top:22px;">Two offerings.<br>One studio.</h2>
-        </div>
-        <p class="meta" style="font-size:13px; max-width:30ch;">Hand-built, self-hosted, yours to keep.</p>
+        </hgroup>
+        <p class="meta" style="font-size:13px; max-width:30ch;">Hand-built, custom design based on your vision, yours to keep.</p>
       </div>
-      <div class="svc-list">
-        <div class="svc-row">
+      <ul class="svc-list">
+        <li class="svc-row">
           <span class="svc-num">01 / II</span>
           <span class="svc-name">Static Site<span class="sub">single page, hand-built</span></span>
-          <span class="svc-desc">A self-hosted page that loads in under a second. Form, copy, fonts — all yours.</span>
-        </div>
-        <div class="svc-row">
+          <span class="svc-desc">A self-hosted page that loads in under a second. Form, copy, fonts: all yours.</span>
+        </li>
+        <li class="svc-row">
           <span class="svc-num">02 / II</span>
           <span class="svc-name">Studio Site<span class="sub">multi-page, CMS-driven</span></span>
-          <span class="svc-desc">Five pages designed as one, a /work section you update yourself, custom illustration throughout.</span>
-        </div>
-      </div>
+          <span class="svc-desc">Several pages designed with custom design, you update yourself, security throughout.</span>
+        </li>
+      </ul>
     </div>
   </section>
 
@@ -114,7 +117,7 @@
     <div class="shell cta">
       <p class="label">Contact</p>
       <h2>Send a brief.<br>We'll read it<br>the same day.</h2>
-      <a href="mailto:studio@nid-studios.no" class="mail">studio@nid-studios.no</a>
+      <a href="mailto:knusmumrikken@proton.no" class="mail">studio@nid-studios.no</a>
     </div>
   </section>
 </main>
@@ -123,7 +126,7 @@
 
 <footer class="foot">
   <span>© 2026 NID Studios</span>
-  <span class="river">NID — from the river Nid, Trondheim.</span>
+  <span class="river">NID - like a river.</span>
 </footer>
 
 </body>
